@@ -3,6 +3,8 @@ local char = game:GetService("Players").LocalPlayer.Character
 local humanoid = char:WaitForChild("Humanoid")
  -- Animation Setup
 local animate = char.Animate
+local forceanim = Instance.new("Animation")
+forceanim.AnimationId = "rbxassetid://17670135152"
 animate.climb.ClimbAnim.AnimationId = "rbxassetid://507765644"
 animate.fall.FallAnim.AnimationId = "rbxassetid://507767968"
 animate.idle.Animation1.AnimationId = "rbxassetid://16163355836"
@@ -15,12 +17,11 @@ local theme = Instance.new("Sound")
 theme.SoundId = "rbxassetid://9133844756"
 theme.Looped = true
 theme.Parent = char.HumanoidRootPart
+theme:Play()
  -- Tool Setup
 local tool = Instance.new("Tool")
 tool.Parent = char
 tool.Activated:Connect(function()
-local forceanim = Instance.new("Animation")
-forceanim.AnimationId = "rbxassetid://17670135152"
 local forceanimtrack = humanoid:LoadAnimation(forceanim)
 forceanimtrack:Play()
 end)
