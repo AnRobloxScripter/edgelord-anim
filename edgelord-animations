@@ -1,30 +1,8 @@
-local humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
-local idleanim = Instance.new("Animation")
-local walkanim = Instance.new("Animation")
-
-idleanim.AnimationId = 16163355836
-walkanim.AnimationId = 16163350920
-humanoid.Parent.Animate:Destroy()
-
-local walkAnimationTrack = humanoid:LoadAnimation(walkanim)
-animationTrack.Looped = true
-local idleAnimationTrack = humanoid:LoadAnimation(idleanim)
-humanoid.Running:Connect(function(speed)
-  if speed > 0 then
-        if not walkAnimationTrack.IsPlaying then
-            moveAnimationTrack:Play()
-        end
-        if idleAnimationTrack.IsPlaying then
-            idleAnimationTrack:Stop()
-        end
-    else
-        if moveAnimationTrack.IsPlaying then
-            moveAnimationTrack:Stop()
-        end
-        if not idleAnimationTrack.IsPlaying then
-            idleAnimationTrack:Play()
-        end
-    end
-else
-
-end)
+local animate = game.Players.LocalPlayer.Character.Animate
+animate.climb.ClimbAnim.AnimationId = "rbxassetid://161235826"
+animate.fall.FallAnim.AnimationId = "rbxassetid://233322916"
+animate.idle.Animation1.AnimationId = "rbxassetid://16163355836"
+animate.idle.Animation2.AnimationId = "rbxassetid://16163355836"
+animate.jump.JumpAnim.AnimationId = "rbxassetid://233064613"
+animate.run.RunAnim.AnimationId = "rbxassetid://16163350920"
+animate.walk.WalkAnim.AnimationId = "rbxassetid://16163350920"
