@@ -62,9 +62,11 @@ auratool.Activated:Connect(function()
 if IsActivated.Value == true then
 IsActivated.Value = false
 highlight.Enabled = false
+fire.Enabled = false
 else
 IsActivated.Value = true
 highlight.Enabled = true
+fire.Enabled = true
 end
 end)
  -- Teleport Tool
