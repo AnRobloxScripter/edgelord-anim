@@ -51,7 +51,8 @@ highlight.Enabled = true
 theme:Play()
 end
 end)
-
+-- GOD MODE
+char.HumanoidRootPart.CFrame.Position = CFrame.new(-4.0879974365234375, -8.9228515625, 1.8359999656677246)
 
 
 
