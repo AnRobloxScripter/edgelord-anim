@@ -32,8 +32,10 @@ highlight.OutlineColor = Color3.fromRGB(255,255,255)
 highlight.OutlineTransparency = 0
 highlight.FillTransparency = 0
 local fire = Instance.new("Fire")
+fire.Name = "VFX2"
 fire.Color = Color3.fromRGB(165, 3, 252)
 fire.SecondaryColor = Color3.fromRGB(106, 48, 138)
+fire.Parent = char.HumanoidRootPart
  -- Force Tool Setup
 local forcetool = Instance.new("Tool")
 local forcesound = Instance.new("Sound")
