@@ -24,7 +24,7 @@ theme:Play()
  -- Aura Setup
 local highlight = Instance.new("Highlight")
 highlight.Parent = char
-highlight.Name = VFX1
+highlight.Name = "VFX1"
 highlight.FillColor = Color3.fromRGB(0,0,0)
 highlight.OutlineColor = Color3.fromRGB(255,255,255)
 highlight.OutlineTransparency = 0
@@ -32,7 +32,7 @@ highlight.FillTransparency = 0
  -- Force Tool Setup
 local forcetool = Instance.new("Tool")
 forcetool.RequiresHandle = false
-forcetool.Name = "Force Tool"
+forcetool.Name = "Force"
 forcetool.Parent = players.LocalPlayer.Backpack
 forcetool.Activated:Connect(function()
 local forceanimtrack = humanoid:LoadAnimation(forceanim)
@@ -42,7 +42,8 @@ end)
 local auratool = Instance.new("Tool")
 local IsActivated = Instance.new("BoolValue")
 IsActivated.Value = true
-IsActivated.Parent = musictool
+IsActivated.Parent = auratool
+auratool.Name = "Aura & Music Toggle"
 auratool.RequiresHandle = false
 auratool.Parent = players.LocalPlayer.Backpack
 auratool.Activated:Connect(function()
