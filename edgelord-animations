@@ -1,6 +1,6 @@
  -- General Setup
 local char = game:GetService("Players").LocalPlayer
-local humanoid = char:WaitForChildOfClass("Humanoid")
+local humanoid = char:WaitForChild("Humanoid")
  -- Animation Setup
 local animate = char.Animate
 animate.climb.ClimbAnim.AnimationId = "rbxassetid://161235826"
