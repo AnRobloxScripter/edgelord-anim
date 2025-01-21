@@ -2,8 +2,10 @@
 local players = game:GetService("Players")
 local char = players.LocalPlayer.Character
 local humanoid = char:WaitForChild("Humanoid")
--- Client Nametag Hider
+ -- Client Nametag Hider
 char.Head.Nametag.Enabled = false
+ -- Speed Modifier
+humanoid.Walkspeed = 35
  -- Animation Setup
 local animate = char.Animate
 local forceanim = Instance.new("Animation")
@@ -32,7 +34,7 @@ highlight.FillTransparency = 0
  -- Force Tool Setup
 local forcetool = Instance.new("Tool")
 local forcesound = Instance.new("Sound")
-forcesound.AudioId = "rbxasset://858508159"
+forcesound.SoundId = "rbxasset://858508159"
 forcetool.RequiresHandle = false
 forcetool.Name = "Force"
 forcetool.Parent = players.LocalPlayer:WaitForChild("Backpack")
@@ -42,23 +44,21 @@ forceanimtrack:Play()
 forcesound.PlayOnRemove = true
 forcesound:Destroy()
 end)
- -- Aura & Music Tool Setup
+ -- Aura Toggle Tool Setup
 local auratool = Instance.new("Tool")
 local IsActivated = Instance.new("BoolValue")
 IsActivated.Value = true
 IsActivated.Parent = auratool
-auratool.Name = "Aura & Music Toggle"
+auratool.Name = "Aura Toggle"
 auratool.RequiresHandle = false
 auratool.Parent = players.LocalPlayer:WaitForChild("Backpack")
 auratool.Activated:Connect(function()
 if IsActivated.Value == true then
 IsActivated.Value = false
 highlight.Enabled = false
-theme:Stop()
 else
 IsActivated.Value = true
 highlight.Enabled = true
-theme:Play()
 end
 end)
 -- GOD MODE
