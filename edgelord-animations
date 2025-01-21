@@ -1,0 +1,16 @@
+local humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
+local idleanim = Instance.new("Animation")
+local walkanim = Instance.new("Animation")
+
+idleanim.AnimationId = 16163355836
+walkanim.AnimationId = 16163350920
+humanoid.Parent.Animate:Destroy()
+
+if humanoid.MoveDirection == Vector3.new(0,0,0) then
+local animationTrack = humanoid:LoadAnimation(idleanim)
+animationTrack:Play()
+else
+local animationTrack = humanoid:LoadAnimation(walkanim)
+animationTrack.Looped = true
+animationTrack:Play()
+end
