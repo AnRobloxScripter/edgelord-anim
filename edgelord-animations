@@ -35,8 +35,14 @@ forcetool.RequiresHandle = false
 forcetool.Name = "Force"
 forcetool.Parent = players.LocalPlayer.Backpack
 forcetool.Activated:Connect(function()
+local ForceCooldown = false
+if ForceCooldown == false then
+ForceCooldown = true
 local forceanimtrack = humanoid:LoadAnimation(forceanim)
 forceanimtrack:Play()
+wait(0.7)
+ForceCooldown = false
+end
 end)
  -- Aura & Music Tool Setup
 local auratool = Instance.new("Tool")
