@@ -6,11 +6,25 @@ idleanim.AnimationId = 16163355836
 walkanim.AnimationId = 16163350920
 humanoid.Parent.Animate:Destroy()
 
-if humanoid.MoveDirection == Vector3.new(0,0,0) then
-local animationTrack = humanoid:LoadAnimation(idleanim)
-animationTrack:Play()
-else
-local animationTrack = humanoid:LoadAnimation(walkanim)
+local walkAnimationTrack = humanoid:LoadAnimation(walkanim)
 animationTrack.Looped = true
-animationTrack:Play()
-end
+local idleAnimationTrack = humanoid:LoadAnimation(idleanim)
+humanoid.Running:Connect(function(speed)
+  if speed > 0 then
+        if not walkAnimationTrack.IsPlaying then
+            moveAnimationTrack:Play()
+        end
+        if idleAnimationTrack.IsPlaying then
+            idleAnimationTrack:Stop()
+        end
+    else
+        if moveAnimationTrack.IsPlaying then
+            moveAnimationTrack:Stop()
+        end
+        if not idleAnimationTrack.IsPlaying then
+            idleAnimationTrack:Play()
+        end
+    end
+else
+
+end)
