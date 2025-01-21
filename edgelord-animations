@@ -35,7 +35,7 @@ local forcesound = Instance.new("Sound")
 forcesound.AudioId = "rbxasset://858508159"
 forcetool.RequiresHandle = false
 forcetool.Name = "Force"
-forcetool.Parent = players.LocalPlayer.Backpack
+forcetool.Parent = players.LocalPlayer:WaitForChild("Backpack")
 forcetool.Activated:Connect(function()
 local forceanimtrack = humanoid:LoadAnimation(forceanim)
 forceanimtrack:Play()
@@ -49,7 +49,7 @@ IsActivated.Value = true
 IsActivated.Parent = auratool
 auratool.Name = "Aura & Music Toggle"
 auratool.RequiresHandle = false
-auratool.Parent = players.LocalPlayer.Backpack
+auratool.Parent = players.LocalPlayer:WaitForChild("Backpack")
 auratool.Activated:Connect(function()
 if IsActivated.Value == true then
 IsActivated.Value = false
