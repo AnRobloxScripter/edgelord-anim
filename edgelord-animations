@@ -31,6 +31,7 @@ highlight.FillColor = Color3.fromRGB(0,0,0)
 highlight.OutlineColor = Color3.fromRGB(255,255,255)
 highlight.OutlineTransparency = 0
 highlight.FillTransparency = 0
+local fire = Instance.new("Fire")
  -- Force Tool Setup
 local forcetool = Instance.new("Tool")
 local forcesound = Instance.new("Sound")
@@ -60,6 +61,16 @@ else
 IsActivated.Value = true
 highlight.Enabled = true
 end
+end)
+ -- Teleport Tool
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Teleport"
+tool.Activated:Connect(function()
+local pos = mouse.Hit
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 -- GOD MODE
 char.HumanoidRootPart.CFrame = CFrame.new(-4.0879974365234375, -8.9228515625, 1.8359999656677246)
