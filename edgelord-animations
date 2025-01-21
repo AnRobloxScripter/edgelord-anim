@@ -1,4 +1,8 @@
-local animate = game.Players.LocalPlayer.Character.Animate
+ -- General Setup
+local char = game:GetService("Players").LocalPlayer
+local humanoid = char:WaitForChildOfClass("Humanoid")
+ -- Animation Setup
+local animate = char.Animate
 animate.climb.ClimbAnim.AnimationId = "rbxassetid://161235826"
 animate.fall.FallAnim.AnimationId = "rbxassetid://233322916"
 animate.idle.Animation1.AnimationId = "rbxassetid://16163355836"
@@ -6,3 +10,17 @@ animate.idle.Animation2.AnimationId = "rbxassetid://16163355836"
 animate.jump.JumpAnim.AnimationId = "rbxassetid://233064613"
 animate.run.RunAnim.AnimationId = "rbxassetid://16163350920"
 animate.walk.WalkAnim.AnimationId = "rbxassetid://16163350920"
+ -- Audio Setup
+local theme = Instance.new("Sound")
+theme.SoundId = "rbxassetid://9133844756"
+theme.Looped = true
+theme.Parent = char.HumanoidRootPart
+ -- Tool Setup
+local tool = Instance.new("Tool")
+tool.Parent = char
+tool.Activated:Connect(function()
+local forceanim = Instance.new("Animation")
+forceanim.AnimationId = "rbxassetid://17670135152"
+local forceanimtrack = humanoid:LoadAnimation(forceanim)
+forceanimtrack:Play()
+end)
