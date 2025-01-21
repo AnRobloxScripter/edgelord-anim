@@ -3,11 +3,11 @@ local char = game:GetService("Players").LocalPlayer.Character
 local humanoid = char:WaitForChild("Humanoid")
  -- Animation Setup
 local animate = char.Animate
-animate.climb.ClimbAnim.AnimationId = "rbxassetid://161235826"
-animate.fall.FallAnim.AnimationId = "rbxassetid://233322916"
+animate.climb.ClimbAnim.AnimationId = "rbxassetid://507765644"
+animate.fall.FallAnim.AnimationId = "rbxassetid://507767968"
 animate.idle.Animation1.AnimationId = "rbxassetid://16163355836"
 animate.idle.Animation2.AnimationId = "rbxassetid://16163355836"
-animate.jump.JumpAnim.AnimationId = "rbxassetid://233064613"
+animate.jump.JumpAnim.AnimationId = "rbxassetid://507765000"
 animate.run.RunAnim.AnimationId = "rbxassetid://16163350920"
 animate.walk.WalkAnim.AnimationId = "rbxassetid://16163350920"
  -- Audio Setup
