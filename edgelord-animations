@@ -5,7 +5,7 @@ local humanoid = char:WaitForChild("Humanoid")
  -- Client Nametag Hider
 char.Head.Nametag.Enabled = false
  -- Speed Modifier
-humanoid.Walkspeed = 35
+humanoid.WalkSpeed = 35
  -- Animation Setup
 local animate = char.Animate
 local forceanim = Instance.new("Animation")
