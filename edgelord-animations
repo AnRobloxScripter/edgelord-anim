@@ -48,8 +48,7 @@ forcetool.Parent = players.LocalPlayer:WaitForChild("Backpack")
 forcetool.Activated:Connect(function()
 local forceanimtrack = humanoid:LoadAnimation(forceanim)
 forceanimtrack:Play()
-forcesound.PlayOnRemove = true
-forcesound:Destroy()
+forcesound:Play()
 end)
  -- Aura Toggle Tool Setup
 local auratool = Instance.new("Tool")
