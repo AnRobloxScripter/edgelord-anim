@@ -15,7 +15,7 @@ animate.idle.Animation1.AnimationId = "rbxassetid://16163355836"
 animate.idle.Animation2.AnimationId = "rbxassetid://16163355836"
 animate.run.RunAnim.AnimationId = "rbxassetid://16163350920"
 animate.walk.WalkAnim.AnimationId = "rbxassetid://16163350920"
- -- Audio Setup
+ -- Music Setup
 local theme = Instance.new("Sound")
 theme.SoundId = "rbxassetid://9133844756"
 theme.Looped = true
@@ -31,18 +31,16 @@ highlight.OutlineTransparency = 0
 highlight.FillTransparency = 0
  -- Force Tool Setup
 local forcetool = Instance.new("Tool")
+local forcesound = Instance.new("Sound")
+forcesound.AudioId = "rbxasset://858508159"
 forcetool.RequiresHandle = false
 forcetool.Name = "Force"
 forcetool.Parent = players.LocalPlayer.Backpack
 forcetool.Activated:Connect(function()
-local ForceCooldown = false
-if ForceCooldown == false then
-ForceCooldown = true
 local forceanimtrack = humanoid:LoadAnimation(forceanim)
 forceanimtrack:Play()
-wait(0.7)
-ForceCooldown = false
-end
+forcesound.PlayOnRemove = true
+forcesound:Destroy()
 end)
  -- Aura & Music Tool Setup
 local auratool = Instance.new("Tool")
