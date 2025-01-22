@@ -2,8 +2,6 @@
 local players = game:GetService("Players")
 local char = players.LocalPlayer.Character
 local humanoid = char:WaitForChild("Humanoid")
--- Checker
-if not char.HumanoidRootPart:WaitForChildOfClass("Sound") then
  -- Speed Modifier
 humanoid.WalkSpeed = 27.5
  -- Animation Setup
@@ -85,6 +83,5 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 -- GOD MODE
 char.HumanoidRootPart.CFrame = CFrame.new(-4.0879974365234375, -8.9228515625, 1.8359999656677246)
-end
 
 
