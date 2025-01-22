@@ -2,8 +2,8 @@
 local players = game:GetService("Players")
 local char = players.LocalPlayer.Character
 local humanoid = char:WaitForChild("Humanoid")
- -- Client Nametag Hider
-char.Head.Nametag.Enabled = false
+-- Checker
+if not char.HumanoidRootPart:WaitForChildOfClass("Sound") then
  -- Speed Modifier
 humanoid.WalkSpeed = 27.5
  -- Animation Setup
@@ -22,6 +22,7 @@ local theme = Instance.new("Sound")
 theme.SoundId = "rbxassetid://9133844756"
 theme.Looped = true
 theme.Parent = char.HumanoidRootPart
+theme.Name = "Edgelord Theme"
 theme:Play()
  -- Aura Setup
 local highlight = Instance.new("Highlight")
@@ -31,6 +32,7 @@ highlight.FillColor = Color3.fromRGB(0,0,0)
 highlight.OutlineColor = Color3.fromRGB(255,255,255)
 highlight.OutlineTransparency = 0
 highlight.FillTransparency = 0
+highlight.DepthMode = Enum.HighlightDepthMode.Occluded
 local fire = Instance.new("Fire")
 fire.Name = "VFX2"
 fire.Color = Color3.fromRGB(165, 3, 252)
@@ -83,6 +85,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 -- GOD MODE
 char.HumanoidRootPart.CFrame = CFrame.new(-4.0879974365234375, -8.9228515625, 1.8359999656677246)
-
+end
 
 
