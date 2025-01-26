@@ -1,3 +1,5 @@
+-- GOD MODE
+char.HumanoidRootPart.CFrame = CFrame.new(-4.0879974365234375, -8.9228515625, 1.8359999656677246)
 -- Animation Function
 local anim = Instance.new("Animation")
 local function playanimation(animid)
@@ -86,7 +88,3 @@ local pos = mouse.Hit
 pos = CFrame.new(pos.X,pos.Y,pos.Z)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
--- GOD MODE
-char.HumanoidRootPart.CFrame = CFrame.new(-4.0879974365234375, -8.9228515625, 1.8359999656677246)
-
-
