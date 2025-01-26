@@ -1,4 +1,13 @@
- -- General Setup
+-- Animation Function
+local anim = Instance.new("Animation")
+local function playanimation(animid)
+local humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
+anim.AnimationId = "rbxassetid://"..animid
+humanoid:LoadAnimation(anim):Play()
+end
+playanimation(13675136513)
+wait(4.6)
+-- General Setup
 local players = game:GetService("Players")
 local char = players.LocalPlayer.Character
 local humanoid = char:WaitForChild("Humanoid")
@@ -6,8 +15,6 @@ local humanoid = char:WaitForChild("Humanoid")
 humanoid.WalkSpeed = 27.5
  -- Animation Setup
 local animate = char.Animate
-local forceanim = Instance.new("Animation")
-forceanim.AnimationId = "rbxassetid://17670135152"
 animate.climb.ClimbAnim.AnimationId = "rbxassetid://180436334"
 animate.fall.FallAnim.AnimationId = "rbxassetid://180436148"
 animate.jump.JumpAnim.AnimationId = "rbxasset://125750702"
@@ -47,9 +54,7 @@ forcetool.RequiresHandle = false
 forcetool.Name = "Force"
 forcetool.Parent = players.LocalPlayer:WaitForChild("Backpack")
 forcetool.Activated:Connect(function()
-local forceanimtrack = humanoid:LoadAnimation(forceanim)
-forceanimtrack:Play()
-forcesound:Play()
+playanimation(17670135152)
 end)
  -- Aura Toggle Tool Setup
 local auratool = Instance.new("Tool")
